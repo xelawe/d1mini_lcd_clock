@@ -100,7 +100,6 @@ void lcd_time(time_t iv_time) {
   int lv_hour_one = lv_hour - (lv_hour_ten * 10);
   do_lcd_char(lv_hour_one);
 
-
   do_lcd_char(bd_dp);
   do_lcd_char(bd_dp);
 
