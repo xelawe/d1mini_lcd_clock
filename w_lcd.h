@@ -87,7 +87,7 @@ const  uint8_t charBitmap[][8] = {
 
 };
 
-enum  bigdigix { bd_0, bd_1, bd_2, bd_3, bd_4, bd_5, bd_6, bd_7, bd_8, bd_9, bd_space, bd_dp } ;
+enum  bigdigix { bd_0, bd_1, bd_2, bd_3, bd_4, bd_5, bd_6, bd_7, bd_8, bd_9, bd_space, bd_dp, bd_dezp, bd_deg, bd_c } ;
 
 const  byte bigdigits[][17] = {
   { // 0
@@ -174,6 +174,29 @@ const  byte bigdigits[][17] = {
     165,
     165,
     254
+  },
+
+  { // dezp
+    1,
+    254,
+    254,
+    254,
+    161
+  },
+
+  { // deg
+    1,
+    111,
+    254,
+    254,
+    254
+  },
+  { // C
+    4,                     // number cols
+    6, 0, 0, 1,            // first row
+    255, 254, 254, 254,    // second row
+    255, 254, 254, 254,    // ...
+    4, 1, 1, 0
   }
 
 };

@@ -19,7 +19,7 @@ void init_lcd() {
 
   lcd.home ();                   // go home
 
-//  lcd.print (" FORUM - fm   ");
+  //  lcd.print (" FORUM - fm   ");
 }
 
 void do_lcd_char( bigdigix bd_ix) {
@@ -82,7 +82,7 @@ void do_lcd_random() {
 void lcd_time(time_t iv_time) {
 
   lcd.clear();
-  lcd.home ();
+  //lcd.home ();
   gv_col = 0;
 
   int lv_hour = hour(iv_time);
@@ -111,5 +111,25 @@ void lcd_time(time_t iv_time) {
   int lv_min_one = lv_min - (lv_min_ten * 10);
   do_lcd_char(lv_min_one);
 
+}
+
+void lcd_temp(float iv_temp) {
+  lcd.clear();
+  //lcd.home ();
+  gv_col = 0;
+
+  int lv_temp_ten = iv_temp / 10;
+  do_lcd_char(lv_temp_ten);
+  do_lcd_char(bd_space);
+
+  int lv_temp_one = iv_temp - (lv_temp_ten * 10);
+  do_lcd_char(lv_temp_one);
+
+  do_lcd_char(bd_dezp);
+  int lv_temp_dec = (iv_temp - (lv_temp_ten * 10) - lv_temp_one) * 10;
+  do_lcd_char(lv_temp_dec);
+  do_lcd_char(bd_space);
+  do_lcd_char(bd_deg);
+  do_lcd_char(bd_c);
 }
 
